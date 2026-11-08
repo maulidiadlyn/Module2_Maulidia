@@ -1,0 +1,8 @@
+
+/* Simulasi penglihatan deuteranopia */
+
+.cvd-sim #scene,
+.cvd-sim #legend {
+  filter: url("#deuteranopia");
+  transition: filter 0.3s ease;
+}

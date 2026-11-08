@@ -1,0 +1,20 @@
+{
+  "name": "module2-maulidia-grafika-komputer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Praktikum Grafika Komputer Modul 2 - Rendering Pipeline dan Primitif 2D",
+  "scripts": {
+    "test": "node tests.mjs",
+    "render": "node draw_plan.mjs",
+    "square": "node draw_square.mjs",
+    "benchmark": "node bench.mjs",
+    "serve": "npx serve web"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

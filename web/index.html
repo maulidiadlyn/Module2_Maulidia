@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Denah 2D - Modul 2 Grafika Komputer</title>
+
+  <link rel="stylesheet" href="./cvd.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #f4f1e9;
+      color: #292722;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 24px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .description {
+      margin-bottom: 18px;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0;
+    }
+
+    button {
+      padding: 10px 16px;
+      border: 1px solid #777;
+      border-radius: 8px;
+      background: white;
+      color: #292722;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e9e5dc;
+    }
+
+    button:focus-visible {
+      outline: 3px solid #245b9e;
+      outline-offset: 3px;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 18px 0;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .swatch {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #222;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    #scene {
+      width: 100%;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    #scene canvas {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .note {
+      margin-top: 14px;
+      font-size: 13px;
+      color: #625f58;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 16px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .legend {
+        gap: 12px;
+      }
+    }
+  </style>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <main>
+
+    <h1>Denah 2D – Candi Prambanan</h1>
+
+    <p class="description">
+      Sketsa ilustratif untuk praktikum rasterisasi,
+      bukan denah ukur atau gambar arsitektur resmi.
+    </p>
+
+    <div class="controls">
+
+      <button
+        id="cvd"
+        type="button"
+        aria-label="Aktifkan atau nonaktifkan simulasi deuteranopia">
+        Simulasikan deuteranopia
+      </button>
+
+      <button
+        id="export"
+        type="button">
+        Export PNG
+      </button>
+
+    </div>
+
+    <div
+      id="legend"
+      class="legend"
+      aria-label="Legenda kategori denah">
+    </div>
+
+    <div
+      id="scene"
+      aria-label="Visualisasi denah dua dimensi Candi Prambanan">
+    </div>
+
+    <p class="note">
+      Visualisasi dibuat menggunakan Three.js dengan resolusi
+      render 800 × 600 pixel.
+    </p>
+
+  </main>
+
+  <script type="module" src="./viewer.mjs"></script>
+
+</body>
+
+</html>
